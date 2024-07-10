@@ -3,8 +3,9 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { Wrapper } from "./basics/Wrapper";
 import { Link } from "react-router-dom";
+import { removeFromCart } from "../Slices/CartSlice";
 
-export const CartTable = () => {
+export const CartTable = ({ cart, dispatch }) => {
   return (
     <>
       <div className="flex justify-center">
@@ -44,50 +45,58 @@ export const CartTable = () => {
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td className=" py-4 whitespace-nowrap text-sm font-medium text-gray-800 w-[40%]">
-                          <div className="flex gap-5 items-end">
-                            <img
-                              src="./products/product1.png"
-                              className="w-[140px] h-[150px]"
-                              alt="product"
-                            />
-                            <div className="grid gap-2">
-                              <p className="max-w-[300px] text-wrap font-semibold text-[16px]">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
+                    {cart.map((item) => (
+                      <tbody key={item.id}>
+                        <tr>
+                          <td className=" py-4 whitespace-nowrap text-sm font-medium text-gray-800 w-[40%]">
+                            <div className="flex gap-5 items-end">
+                              <img
+                                src={item.img}
+                                className="w-[140px] h-[150px]"
+                                alt="product"
+                              />
+                              <div className="grid gap-2">
+                                <p className="max-w-[300px] text-wrap font-semibold text-[16px]">
+                                  {item.title} <br /> {item.description} <br />{" "}
+                                  {item.id}
+                                </p>
+                                <p className="text-[#7D7676] text-[12px]">
+                                  #2138473669863
+                                </p>
+                              </div>
+                            </div>
+                            <div
+                              className="flex gap-1 mt-2 items-center text-primaryColor cursor-pointer"
+                              onClick={() => {
+                                removeFromCart(item.id);
+                                console.log(clicked);
+                              }}
+                            >
+                              <RiDeleteBinLine /> Remove
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                            3,500
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                            <div className="flex gap-2">
+                              <p className="text-ascentColor font-semibold cursor-pointer">
+                                -
                               </p>
-                              <p className="text-[#7D7676] text-[12px]">
-                                #2138473669863
+                              <p>1</p>
+                              <p className="text-ascentColor font-semibold  cursor-pointer">
+                                +
                               </p>
                             </div>
-                          </div>
-                          <div className="flex gap-1 mt-2 items-center text-primaryColor cursor-pointer">
-                            <RiDeleteBinLine /> Remove
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                          3,500
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                          <div className="flex gap-2">
-                            <p className="text-ascentColor font-semibold cursor-pointer">
-                              -
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                            <p className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent ">
+                              3,500
                             </p>
-                            <p>1</p>
-                            <p className="text-ascentColor font-semibold  cursor-pointer">
-                              +
-                            </p>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                          <p className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent ">
-                            3,500
-                          </p>
-                        </td>
-                      </tr>
-                    </tbody>
+                          </td>
+                        </tr>
+                      </tbody>
+                    ))}
                   </table>
                 </div>
               </div>

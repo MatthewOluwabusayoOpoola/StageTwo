@@ -5,8 +5,37 @@ import { FilterCard } from "../component/basics/FilterCard";
 import { ProductCard } from "../component/ProductCard";
 import { Navigation } from "../component/basics/Navigation";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Slices/CartSlice";
 
 export const ProductListing = () => {
+  const items = [
+    {
+      id: 1,
+      title: "GeeksForGeeks bag",
+      price: 109.95,
+      description:
+        "Your perfect pack for everyday use and walks in the forest.",
+      category: "bag",
+      img: "./products/product1.png",
+    },
+    {
+      id: 2,
+      title: "GeeksForGeeks tshirt",
+      price: 22.3,
+      description: "Slim-fitting style,black tshirt. From geeksforgeeks",
+      category: "men's clothing",
+      img: "./products/product1.png",
+    },
+  ];
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    console.log("dispatching add to cart");
+    dispatch(addToCart(item));
+    return;
+  };
   return (
     <>
       <Navigation />
@@ -56,11 +85,17 @@ export const ProductListing = () => {
               </div>
               <div class="h-[80vh] overflow-y-scroll">
                 <div class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
-                  <ProductCard />
-                  <ProductCard />
-                  <ProductCard />
-                  <ProductCard />
-                  <ProductCard />
+                  {items.map((item) => (
+                    <ProductCard
+                      key={item.id}
+                      data={item}
+                      handleAddToCart={() => {
+                        console.log("dispatching add to cart");
+                        dispatch(addToCart(item));
+                        return;
+                      }}
+                    />
+                  ))}
                 </div>
               </div>
             </aside>

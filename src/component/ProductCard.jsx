@@ -6,7 +6,7 @@ export const ProductCard = ({ data, handleAddToCart }) => {
     <div>
       <div class="my-8 rounded shadow-sm shadow-gray-200 dark:shadow-gray-900 bg-[#F2F2F2] ">
         <div>
-          <img src={data.img} class=" h-[230px] w-full object-cover" />
+          <img src={data.img} class="min-h-[230px] w-full object-cover" />
 
           <div class="p-2 gap-3 grid items-center">
             <div>

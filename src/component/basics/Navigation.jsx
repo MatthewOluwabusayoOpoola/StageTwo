@@ -10,7 +10,7 @@ export const Navigation = () => {
   return (
     <div>
       {" "}
-      <div className=" relative flex justify-center h-[8vh] ">
+      <div className="hidden relative md:flex justify-center h-[8vh] ">
         <Wrapper className="justify-between ">
           <aside className="block ">
             <ul className="flex font-semibold items-center justify-center gap-3 text-primaryColor text-[16px]">
@@ -44,6 +44,33 @@ export const Navigation = () => {
         </Wrapper>
       </div>
       <div className="h-[1px] w-full bg-[#D9D9D9]" />
+      {/* Mobile */}
+      <div className="md:hidden relative flex justify-center items-center h-fit w-screen py-4">
+        <Wrapper className="grid  gap-5 ">
+          <div className="flex justify-between">
+            <div className="flex items-center">
+              <img src={"./logo.png"} width={60} height={60} alt="plur logo" />
+            </div>
+            <div className="flex gap-10 items-center text-primaryColor bg-ascentColor p-1 rounded-md h-fit w-fit cursor-pointer">
+              <FaSearch className=" cursor-pointer h-[22px] w-[22px]" />
+            </div>
+          </div>
+          <div className="block ">
+            <ul className="flex font-semibold items-center justify-between gap-3 text-primaryColor text-[14px] w-full">
+              <Link to={"#"} className="">
+                Tech Accessories
+              </Link>
+              <Link to={"#"} className="">
+                Outdoor Gear
+              </Link>
+              <Link to={"#"} className="">
+                Athletic Apparel
+              </Link>
+            </ul>
+          </div>
+        </Wrapper>
+      </div>
+      <div className="h-[4px] w-full bg-[#D9D9D9]" />
     </div>
   );
 };

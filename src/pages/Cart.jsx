@@ -21,11 +21,7 @@ export const Cart = () => {
         </div>
       </div>
 
-      <CartTable
-        cart={cart}
-        dispatch={dispatch}
-        removeFromCart={removeFromCart()}
-      />
+      <CartTable cart={cart} dispatch={dispatch} />
     </>
   );
 };

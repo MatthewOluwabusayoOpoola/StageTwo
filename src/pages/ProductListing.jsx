@@ -7,6 +7,8 @@ import { Navigation } from "../component/basics/Navigation";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Slices/CartSlice";
+import { IoHomeOutline, IoPersonOutline } from "react-icons/io5";
+import { GrCart } from "react-icons/gr";
 
 export const ProductListing = () => {
   const items = [
@@ -94,7 +96,7 @@ export const ProductListing = () => {
               </div>
             </aside>
             <aside className="grid gap-5 mt-10 w-full ">
-              <div className="flex justify-between">
+              <div className="grid gap-2 md:flex justify-between">
                 <Link
                   to={"#"}
                   className="text-[16px] text-primaryColor font-semibold "
@@ -120,7 +122,7 @@ export const ProductListing = () => {
                   Other Accessories
                 </Link>
               </div>
-              <div class="h-[80vh] overflow-y-scroll">
+              <div class="md:block md:h-[80vh] h-[60vh] overflow-y-scroll">
                 <div class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
                   {items.map((item) => (
                     <ProductCard
@@ -139,6 +141,44 @@ export const ProductListing = () => {
           </div>
         </Wrapper>
       </div>
+      {/* Mobile */}
+      <div className="md:hidden relative flex justify-center items-center h-fit w-screen my-5 ">
+        <Wrapper className="grid  gap-5  ">
+          <div className="block bg-ascentColor rounded-md p-5">
+            <ul className="flex font-semibold items-center justify-between gap-3 text-primaryColor text-[14px] w-full">
+              <Link
+                to={"#"}
+                className="text-[18px] gap-2 flex flex-col p-2 focus:border-[3px] focus:border-primaryColor rounded-lg items-center justify-center"
+              >
+                <IoHomeOutline className="h-[33px] w-[33px] text-primaryColor" />
+                Home
+              </Link>
+              <Link
+                to={"#"}
+                className="text-[18px] gap-2 flex flex-col p-2 focus:border-[3px] focus:border-primaryColor rounded-lg items-center justify-center"
+              >
+                <HiOutlineFunnel className="h-[33px] w-[33px] text-primaryColor" />
+                Fliter
+              </Link>
+              <Link
+                to={"/cart"}
+                className="text-[18px] gap-2 flex flex-col p-2 focus:border-[3px] focus:border-primaryColor rounded-lg items-center justify-center"
+              >
+                <GrCart className="h-[33px] w-[33px] text-primaryColor" />
+                Cart
+              </Link>
+              <Link
+                to={"#"}
+                className="text-[18px] gap-2 flex flex-col p-2 focus:border-[3px] focus:border-primaryColor rounded-lg items-center justify-center"
+              >
+                <IoPersonOutline className="h-[33px] w-[33px] text-primaryColor" />
+                Profile
+              </Link>
+            </ul>
+          </div>
+        </Wrapper>
+      </div>
+      <div className="h-[4px] w-full bg-[#D9D9D9]" />
     </>
   );
 };

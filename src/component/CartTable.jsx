@@ -19,27 +19,22 @@ export const CartTable = ({ cart, dispatch }) => {
                       <tr>
                         <th
                           scope="col"
-                          className=" py-3 text-start text-xs font-medium text-gray-500 uppercas  w-[50%]"
+                          className=" py-3 text-start text-xs font-medium text-gray-500 uppercas  w-[60%]"
                         >
                           Added Items
                         </th>
 
                         <th
                           scope="col"
-                          className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase flex items-center gap-2 w-[15%]"
+                          className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase flex items-center gap-2 w-[20%]"
                         >
                           Price
                           <TbCurrencyNaira className="h-[14px] w-[17px]" />
                         </th>
+
                         <th
                           scope="col"
-                          className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase  w-[15%]"
-                        >
-                          QTY
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase  w-[15%]"
+                          className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase  w-[20%]"
                         >
                           Total
                         </th>
@@ -78,17 +73,7 @@ export const CartTable = ({ cart, dispatch }) => {
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                             3,500
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                            <div className="flex gap-2">
-                              <p className="text-ascentColor font-semibold cursor-pointer">
-                                -
-                              </p>
-                              <p>1</p>
-                              <p className="text-ascentColor font-semibold  cursor-pointer">
-                                +
-                              </p>
-                            </div>
-                          </td>
+
                           <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                             <p className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent ">
                               3,500
@@ -107,8 +92,8 @@ export const CartTable = ({ cart, dispatch }) => {
       <div className="flex justify-center">
         <Wrapper>
           <div className="bg-[#D9D9D9] w-full p-10 rounded-md">
-            <div className="flex justify-between w-full">
-              <div className="grid gap-2 items-center">
+            <div className=" grid items-center gap-5 md:flex md:justify-between w-full">
+              <div className="grid gap-2 items-center sm:w-[100%]">
                 <h1 className="text-primaryColor font-semibold">
                   {" "}
                   Choose Shipping Mode:
@@ -155,7 +140,7 @@ export const CartTable = ({ cart, dispatch }) => {
                 </div>
               </div>
               <div className="h-full w-2 bg-red-200" />
-              <div className="w-[30%] grid gap-5">
+              <div className="w-[100%] grid gap-5">
                 <div className="flex items-center justify-between">
                   <p>Subtotal</p>
                   <span className="ml-3 font-semibold flex gap-1 items-center">

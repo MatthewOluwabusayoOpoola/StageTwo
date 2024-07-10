@@ -13,7 +13,7 @@ export const Navigation = () => {
       <div className=" relative flex justify-center h-[8vh] ">
         <Wrapper className="justify-between ">
           <aside className="block ">
-            <ul className="flex items-center justify-center gap-3 text-primaryColor text-[16px]">
+            <ul className="flex font-semibold items-center justify-center gap-3 text-primaryColor text-[16px]">
               <Link to={"#"} className="">
                 Tech Accessories
               </Link>

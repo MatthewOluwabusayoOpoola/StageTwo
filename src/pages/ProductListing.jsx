@@ -12,20 +12,57 @@ export const ProductListing = () => {
   const items = [
     {
       id: 1,
-      title: "GeeksForGeeks bag",
-      price: 109.95,
+      title: "Mobile Devices",
+      price: 50000,
       description:
-        "Your perfect pack for everyday use and walks in the forest.",
+        "Strong P9 Wireless Bluetooth Stereo OverEar Foldable Headset",
       category: "bag",
       img: "./products/product1.png",
     },
     {
       id: 2,
-      title: "GeeksForGeeks tshirt",
+      title: "Mobile Devices",
       price: 22.3,
-      description: "Slim-fitting style,black tshirt. From geeksforgeeks",
+      description:
+        "Strong P9 Wireless Bluetooth Stereo OverEar Foldable Headset",
       category: "men's clothing",
-      img: "./products/product1.png",
+      img: "./products/product2.png",
+    },
+    {
+      id: 3,
+      title: "Mobile Devices",
+      price: 109.95,
+      description:
+        "Your perfect pack for everyday use and walks in the forest.",
+      category: "bag",
+      img: "./products/product3.png",
+    },
+    {
+      id: 4,
+      title: "Mobile Devices",
+      price: 22.3,
+      description:
+        "Strong P9 Wireless Bluetooth Stereo OverEar Foldable Headset",
+      category: "men's clothing",
+      img: "./products/product4.png",
+    },
+    {
+      id: 5,
+      title: "Mobile Devices",
+      price: 109.95,
+      description:
+        "Your perfect pack for everyday use and walks in the forest.",
+      category: "bag",
+      img: "./products/product5.png",
+    },
+    {
+      id: 6,
+      title: "Mobile Devices",
+      price: 22.3,
+      description:
+        "Strong P9 Wireless Bluetooth Stereo OverEar Foldable Headset",
+      category: "men's clothing",
+      img: "./products/product6.png",
     },
   ];
 

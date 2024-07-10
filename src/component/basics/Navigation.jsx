@@ -3,8 +3,10 @@ import { Wrapper } from "./Wrapper";
 import { FaSearch } from "react-icons/fa";
 import { IoPersonOutline } from "react-icons/io5";
 import { GrCart } from "react-icons/gr";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
+  const navigate = useNavigate();
   return (
     <div>
       {" "}
@@ -12,9 +14,15 @@ export const Navigation = () => {
         <Wrapper className="justify-between ">
           <aside className="block ">
             <ul className="flex items-center justify-center gap-3 text-primaryColor text-[16px]">
-              <p className="">Tech Accessories</p>
-              <p className="">Outdoor Gear</p>
-              <p className="">Athletic Apparel</p>
+              <Link to={"#"} className="">
+                Tech Accessories
+              </Link>
+              <Link to={"#"} className="">
+                Outdoor Gear
+              </Link>
+              <Link to={"#"} className="">
+                Athletic Apparel
+              </Link>
             </ul>
           </aside>
           <div className="flex items-center absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%]">
@@ -24,9 +32,14 @@ export const Navigation = () => {
             {/* <p className="bg-primary  p-2 px-4 rounded-md hover:bg-primary/80">
       Login
     </p> */}
-            <FaSearch className="w-4 h-4" />
-            <IoPersonOutline className="w-4 h-4" />
-            <GrCart className="w-4 h-4" />
+            <FaSearch className="w-4 h-4 cursor-pointer" />
+            <IoPersonOutline className="w-4 h-4 cursor-pointer" />
+            <GrCart
+              className="w-4 h-4 cursor-pointer"
+              onClick={() => {
+                navigate("/cart");
+              }}
+            />
           </aside>
         </Wrapper>
       </div>

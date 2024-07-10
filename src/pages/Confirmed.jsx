@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Confirmed = () => {
   return (
@@ -14,9 +15,12 @@ export const Confirmed = () => {
         Thank you for shopping with us. <br />
         Expect you order between 10th -12th Jul-2024
       </p>
-      <button class="cursor-pointer bg-ascentColor text-primaryColor font-semibold  py-2 px-4 border border-ascentColor hover:border-transparent rounded text-sm mt-[4rem] ">
+      <Link
+        to={"/"}
+        class="cursor-pointer bg-ascentColor text-primaryColor font-semibold  py-2 px-4 border border-ascentColor hover:border-transparent rounded text-sm mt-[4rem] "
+      >
         Continue Shopping
-      </button>
+      </Link>
     </div>
   );
 };

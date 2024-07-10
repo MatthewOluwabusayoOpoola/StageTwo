@@ -2,6 +2,7 @@ import React from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { Wrapper } from "./basics/Wrapper";
+import { Link } from "react-router-dom";
 
 export const CartTable = () => {
   return (
@@ -171,12 +172,18 @@ export const CartTable = () => {
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <button class="cursor-pointer bg-ascentColor text-primaryColor font-semibold  py-2 px-4 border border-ascentColor hover:border-transparent rounded text-sm">
+                  <Link
+                    to={"/confirmed"}
+                    class="cursor-pointer bg-ascentColor text-primaryColor font-semibold  py-2 px-4 border border-ascentColor hover:border-transparent rounded text-sm"
+                  >
                     Checkout
-                  </button>
-                  <button class="cursor-pointer bg-transparent text-primaryColor font-semibold  py-2 px-4 border border-ascentColor hover:border-transparent rounded text-sm">
+                  </Link>
+                  <Link
+                    to={"/"}
+                    class="cursor-pointer bg-transparent text-primaryColor font-semibold  py-2 px-4 border border-ascentColor hover:border-transparent rounded text-sm"
+                  >
                     Keep Shopping
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
